@@ -1,25 +1,21 @@
 FROM jenkins:2.19.4
 
-RUN mkdir /usr/local/src/phpcs
-RUN wget http://file.cscfa.fr/phpcs.phar  -P /usr/local/src/phpcs/
-RUN chmod a+x /usr/local/src/phpcs/phpcs.phar
-RUN ln -s /usr/local/src/phpcs/phpcs.phar /usr/local/bin/phpcs
+ADD phpcs.sh /tmp/
+ADD phploc.sh /tmp/
+ADD phpcpd.sh /tmp/
+ADD phpmd.sh /tmp/
+ADD sfStandard.sh /tmp/
 
-RUN mkdir /usr/local/src/phploc
-RUN wget https://phar.phpunit.de/phploc.phar  -P /usr/local/src/phploc/
-RUN chmod a+x /usr/local/src/phploc/phploc.phar
-RUN ln -s /usr/local/src/phploc/phploc.phar /usr/local/bin/phploc
+ADD php55.sh /tmp/
+ADD php56.sh /tmp/
+ADD php70.sh /tmp/
 
-RUN mkdir /usr/local/src/phpcpd
-RUN wget https://phar.phpunit.de/phpcpd.phar  -P /usr/local/src/phpcpd/
-RUN chmod a+x /usr/local/src/phpcpd/phpcpd.phar
-RUN ln -s /usr/local/src/phpcpd/phpcpd.phar /usr/local/bin/phpcpd
+RUN /bin/bash /tmp/phpcs.sh && rm /tmp/phpcs.sh
+RUN /bin/bash /tmp/phploc.sh && rm /tmp/phploc.sh
+RUN /bin/bash /tmp/phpcpd.sh && rm /tmp/phpcpd.sh
+RUN /bin/bash /tmp/phpmd.sh && rm /tmp/phpmd.sh
+RUN /bin/bash /tmp/sfStandard.sh && rm /tmp/sfStandard.sh
 
-RUN mkdir /usr/local/src/phpmd
-RUN wget http://static.phpmd.org/php/latest/phpmd.phar  -P /usr/local/src/phpmd/
-RUN chmod a+x /usr/local/src/phpmd/phpmd.phar
-RUN ln -s /usr/local/src/phpmd/phpmd.phar /usr/local/bin/phpmd
-
-RUN mkdir /usr/local/src/symfony-standard
-WORKDIR /usr/local/src/symfony-standard
-RUN git clone https://github.com/djoos/Symfony2-coding-standard.git
+RUN /bin/bash /tmp/php55.sh && rm /tmp/php55.sh
+RUN /bin/bash /tmp/php56.sh && rm /tmp/php56.sh
+RUN /bin/bash /tmp/php70.sh && rm /tmp/php70.sh
