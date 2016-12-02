@@ -2,6 +2,9 @@
 
 apt-get update
 
+apt-get install -y apt-utils \
+	build-essential
+
 apt-get install -y curl \
 	libcurl3 \
 	libcurl3-dev \
