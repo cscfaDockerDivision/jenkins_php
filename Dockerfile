@@ -1,7 +1,9 @@
 FROM jenkins:2.19.4
 
+USER root
+
 RUN mkdir /usr/local/src/phpcs
-RUN wget http://file.cscfa.fr/phpcs.phar  -P /usr/local/src/phpcs/
+RUN wget http://file.cscfa.fr/logiciel/phpcs.phar  -P /usr/local/src/phpcs/
 RUN chmod a+x /usr/local/src/phpcs/phpcs.phar
 RUN ln -s /usr/local/src/phpcs/phpcs.phar /usr/local/bin/phpcs
 
