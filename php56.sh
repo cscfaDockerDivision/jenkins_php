@@ -8,17 +8,6 @@ tar -xzf php-5.6.27.tar.gz
 rm php-5.6.27.tar.gz
 cd /usr/local/src/php56/php-5.6.27/
 
-apt-get install -y curl \
-	libcurl3 \
-	libcurl3-dev \
-	libjpeg-dev \
-	libpng16-dev \
-	libgcrypt11-dev \
-	zlib1g-dev \
-	libmcrypt-dev \
-	libxml2-dev \
-	pkg-config
-
 ./configure --prefix=/usr/local/php56 \
 	--with-mysql \
 	--with-mysqli \

@@ -8,17 +8,6 @@ tar -xzf php-7.0.12.tar.gz
 rm php-7.0.12.tar.gz
 cd /usr/local/src/php70/php-7.0.12/
 
-apt-get install -y curl \
-	libcurl3 \
-	libcurl3-dev \
-	libjpeg-dev \
-	libpng16-dev \
-	libgcrypt11-dev \
-	zlib1g-dev \
-	libmcrypt-dev \
-	libxml2-dev \
-	pkg-config
-
 ./configure --prefix=/usr/local/php70 \
 	--with-mysql \
 	--with-mysqli \
