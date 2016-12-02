@@ -1,5 +1,7 @@
 FROM jenkins:2.19.4
 
+USER root
+
 ADD phpcs.sh /tmp/
 ADD phploc.sh /tmp/
 ADD phpcpd.sh /tmp/
