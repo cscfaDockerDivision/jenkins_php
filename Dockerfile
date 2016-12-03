@@ -26,5 +26,7 @@ RUN /bin/bash /tmp/php55.sh && rm /tmp/php55.sh
 RUN /bin/bash /tmp/php56.sh && rm /tmp/php56.sh
 RUN /bin/bash /tmp/php70.sh && rm /tmp/php70.sh
 
+RUN ln -s /usr/local/php70/bin/php /usr/local/bin/php
+
 ADD composer.sh /tmp/
 RUN /bin/bash /tmp/composer.sh && rm /tmp/composer.sh
