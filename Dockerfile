@@ -28,3 +28,6 @@ RUN ln -s /usr/local/php70/bin/php /usr/local/bin/php
 
 ADD composer.sh /tmp/
 RUN /bin/bash /tmp/composer.sh && rm /tmp/composer.sh
+
+ADD phpunit.sh /tmp/
+RUN /bin/bash /tmp/phpunit.sh && rm /tmp/phpunit.sh
