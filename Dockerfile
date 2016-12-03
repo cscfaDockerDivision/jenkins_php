@@ -25,3 +25,6 @@ RUN /bin/bash /tmp/before_php.sh && rm /tmp/before_php.sh
 RUN /bin/bash /tmp/php55.sh && rm /tmp/php55.sh
 RUN /bin/bash /tmp/php56.sh && rm /tmp/php56.sh
 RUN /bin/bash /tmp/php70.sh && rm /tmp/php70.sh
+
+ADD composer.sh /tmp/
+RUN /bin/bash /tmp/composer.sh && rm /tmp/composer.sh
