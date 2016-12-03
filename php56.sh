@@ -21,7 +21,8 @@ cd /usr/local/src/php56/php-5.6.27/
 	--with-jpeg-dir=/usr/lib/x86_64-linux-gnu \
 	--with-png-dir=/usr/lib/x86_64-linux-gnu \
 	--enable-opcache \
-	--with-openssl
+	--with-openssl \
+	--with-bz2
 
 make && make install
 

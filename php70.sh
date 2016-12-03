@@ -21,7 +21,8 @@ cd /usr/local/src/php70/php-7.0.12/
 	--with-jpeg-dir=/usr/lib/x86_64-linux-gnu \
 	--with-png-dir=/usr/lib/x86_64-linux-gnu \
 	--enable-opcache \
-	--with-openssl
+	--with-openssl \
+	--with-bz2
 
 make && make install
 

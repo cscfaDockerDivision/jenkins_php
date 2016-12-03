@@ -17,3 +17,4 @@ apt-get install -y libxml2-dev
 apt-get install -y pkg-config 
 apt-get install -y libssl-dev
 apt-get install -y libicu-dev
+apt-get install -y libbz2-dev
